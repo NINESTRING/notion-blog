@@ -1,8 +1,11 @@
-import { Inter } from "@next/font/google";
+import { Inter } from "next/font/google";
 // import { NotionRenderer } from "react-notion-x";
+import Blogs from "@/components/Blogs";
+import MyProfilePic from "@/components/MyProfilePic";
 import Posts from "@/components/Posts";
 import getNotionDatabase from "@/lib/getNotionDatabase";
-import Blogs from "@/components/Blogs";
+
+export const dynamic = "force-dynamic"; // dynamic rendering (fetch method 사용 안할때)
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,14 +21,26 @@ export default async function Home() {
     //   </pre>
     //   {/* <NotionRenderer blockMap={data} /> */}
     // </div>
-    <main className="px-6 mx-auto max-w-5xl min-h-screen">
+    /* // .container {
+  //   max-width: 1366px;
+  //   min-height: 100vh;
+  //   margin: 0 auto;
+  //   padding: 0 60px;
+  //   display: flex;
+  //   flex-direction: column;
+  //   justify-content: space-between;
+  // } */
+
+    <main className="px-6 mx-auto">
+      <MyProfilePic />
+
       <p className="mt-12 mb-12 text-3xl text-center dark:text-white">
         Hello and Welcome 👋&nbsp;
         <span className="whitespace-nowrap">
           I&apos;m <span className="font-bold">Koo</span>.
         </span>
       </p>
-      <Posts />
+      {/* <Posts /> */}
       <Blogs notionPageinfo={notionPageInfo} />
     </main>
   );

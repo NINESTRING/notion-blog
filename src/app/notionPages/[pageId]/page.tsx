@@ -12,7 +12,7 @@ export default async function Page({ params }: { params: { pageId: string } }) {
 
   return (
     <div>
-      <pre>{JSON.stringify(data, undefined, 2)}</pre>
+      {/* <pre>{JSON.stringify(data, undefined, 2)}</pre> */}
       <NotionRenderer blockMap={data} />
       <Link href="/">← Back to home</Link>
     </div>

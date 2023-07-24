@@ -11,32 +11,27 @@ export default function BlogItem({ pageInfo }: Props) {
   // const formattedDate = getFormattedDate(date);
 
   return (
-    <li className="mt-4 text-2xl dark:text-white/90">
-      <Link
-        className="transition duration-300 hover:scale-105"
-        href={`/notionPages/${id}`}
-      >
-        <div className="flex flex-col rounded-xl shadow-lg overflowh">
-          <div className="flex-shrink-0">
-            <Image
-              className="h-64 w-full object-fill"
-              src={cover}
-              alt="cover"
-              width={100}
-              height={100}
-            />
-          </div>
-          <div className="flex-1 bg-gray-50 pt-2 pb-6 flex flex-col justify-between">
-            <div className="flex-1">
-              <span className="block mt-2">
-                <h4 className="text-xsm font-medium text-gray-600">{date}</h4>
-              </span>
-            </div>
-          </div>
-        </div>
-      </Link>
-      <br />
-      <p className="text-sm mt-1">{title}</p>
-    </li>
+    <Link
+      // className="transition duration-300 hover:scale-105"
+      className="grid aspect-[1/1.5]"
+      href={`/notionPages/${id}`}
+    >
+      {/* <li className="mt-4 text-2xl dark:text-white/90"> */}
+      <div className="col-[1/2] row-[1/2]">
+        <Image
+          className="w-full aspect-[1/1.25] object-cover"
+          src={cover}
+          alt="cover"
+          width={500}
+          height={500}
+        />
+      </div>
+      <div className="col-[1/2] row-[1/2] bg-white self-end mx-2 mt-2 mb-8 p-2 shadow-lg">
+        <h2 className="text-sm mt-1 text-gray-600">{title}</h2>
+        <h4 className="text-xsm font-medium text-gray-600">{date}</h4>
+        <h4 className="text-xsm font-medium text-gray-600">{date}</h4>
+      </div>
+      {/* </li> */}
+    </Link>
   );
 }

@@ -5,7 +5,7 @@ type Props = {
   post: NotionPageInfo;
 };
 
-export default function ListItem({ post }: Props) {
+export default function ListItem({ post }: any) {
   const { id, title, date } = post;
   const formattedDate = getFormattedDate(date);
 

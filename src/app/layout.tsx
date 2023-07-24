@@ -1,10 +1,10 @@
-import "../styles/globals.css";
-import "react-notion/src/styles.css";
-import "prismjs/themes/prism-tomorrow.css";
-import { ABeeZee } from "@next/font/google";
 import Navbar from "@/components/Navbar";
-import MyProfilePic from "@/components/MyProfilePic";
+import "@/styles/globals.css";
 import type { Metadata } from "next";
+import { headers } from "next/dist/client/components/headers";
+import { ABeeZee } from "next/font/google";
+import "prismjs/themes/prism-tomorrow.css";
+import "react-notion/src/styles.css";
 
 const abeezee = ABeeZee({
   weight: ["400"],
@@ -22,12 +22,20 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return (
+  const headersList = headers();
+  const referer = headersList.get("referer");
+
+  console.log("PATHNAME", referer?.split("/")?.[3]);
+
+  return ["food", "reddit"].includes(referer?.split("/")?.[3] ?? "") ? (
+    <html lang="en">
+      <body className={`${abeezee.className}`}>{children}</body>
+    </html>
+  ) : (
     <html lang="en">
       <body className={`${abeezee.className} dark:bg-slate-800`}>
         <Navbar />
-        <MyProfilePic />
-        {children}
+        <div className="max-w-7xl mx-auto">{children}</div>
       </body>
     </html>
   );

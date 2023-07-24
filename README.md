@@ -11,3 +11,9 @@ Ok to proceed? (y) y
 ✔ Would you like to use experimental `app/` directory with this project? … No / Yes
 
 https://www.youtube.com/watch?v=puIQhnjOfbc
+
+## mysql
+
+docker run --name mysql-container -e MYSQL_ROOT_PASSWORD=<password> -d -p 3306:3306 mysql:latest
+
+docker exec -it mysql-container bash

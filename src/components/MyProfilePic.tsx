@@ -8,7 +8,7 @@ export default function MyProfilePic() {
         src="/images/profile-photo-600x600.png"
         width={200}
         height={200}
-        alt="Dave Gray"
+        alt="Ninestring"
         priority={true}
       />
     </section>
