@@ -1,4 +1,4 @@
-import getNotionDatabase from "@/lib/getNotionDatabase";
+import getNotionDatabase from "@/lib/blog/getNotionDatabase";
 import ListItem from "./ListItem";
 import BlogItem from "./BlogItem";
 

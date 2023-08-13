@@ -1,9 +1,9 @@
 import { Inter } from "next/font/google";
 // import { NotionRenderer } from "react-notion-x";
-import Blogs from "@/components/Blogs";
-import MyProfilePic from "@/components/MyProfilePic";
-import Posts from "@/components/Posts";
-import getNotionDatabase from "@/lib/getNotionDatabase";
+import Blogs from "@/components/blog/Blogs";
+import MyProfilePic from "@/components/blog/MyProfilePic";
+import Posts from "@/components/blog/Posts";
+import getNotionDatabase from "@/lib/blog/getNotionDatabase";
 
 export const dynamic = "force-dynamic"; // dynamic rendering (fetch method 사용 안할때)
 

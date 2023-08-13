@@ -1,4 +1,4 @@
-import Navbar from "@/components/Navbar";
+import Navbar from "@/components/blog/Navbar";
 import "@/styles/globals.css";
 import type { Metadata } from "next";
 import { headers } from "next/dist/client/components/headers";
@@ -25,9 +25,10 @@ export default function RootLayout({
   const headersList = headers();
   const referer = headersList.get("referer");
 
-  console.log("PATHNAME", referer?.split("/")?.[3]);
+  console.log("PATHNAME", referer, referer?.split("/")?.[3]);
 
-  return ["food", "reddit"].includes(referer?.split("/")?.[3] ?? "") ? (
+  return referer === null ||
+    ["food", "reddit"].includes(referer?.split("/")?.[3] ?? "") ? (
     <html lang="en">
       <body className={`${abeezee.className}`}>{children}</body>
     </html>

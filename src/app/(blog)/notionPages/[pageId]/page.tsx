@@ -1,6 +1,6 @@
 // "use client";
 
-import getNotionPage from "@/lib/getNotionPage";
+import getNotionPage from "@/lib/blog/getNotionPage";
 import { GetStaticPathsContext } from "next";
 import Link from "next/link";
 import { NotionRenderer } from "react-notion";
